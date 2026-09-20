@@ -1,0 +1,432 @@
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Overteach | Mechaniker Preisliste</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at top, #202020 0%, #0b0b0b 45%, #050505 100%);
+    color: #fff;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    border-bottom: 1px solid #292929;
+}
+
+.logo {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 5px;
+}
+
+.logo span {
+    color: #ff8c00;
+}
+
+.subtitle {
+    color: #999;
+    margin-top: 10px;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 35px 0 18px;
+    font-size: 24px;
+}
+
+.section-title::before {
+    content: "";
+    width: 5px;
+    height: 28px;
+    background: #ff8c00;
+    border-radius: 5px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.card {
+    background: rgba(20,20,20,.95);
+    border: 1px solid #292929;
+    border-radius: 12px;
+    padding: 20px;
+    transition: .2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: #ff8c00;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #888;
+    font-size: 13px;
+}
+
+.price {
+    margin-top: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff9d22;
+}
+
+.percent {
+    color: #fff;
+    font-weight: bold;
+}
+
+.info {
+    background: #111;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid #242424;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.green {
+    color: #42d77d;
+}
+
+.orange {
+    color: #ff9d22;
+}
+
+.red {
+    color: #ff5555;
+}
+
+/* Rechner */
+
+.calculator {
+    margin-top: 45px;
+    background: #111;
+    border: 1px solid #292929;
+    border-radius: 14px;
+    padding: 30px;
+}
+
+.calculator h2 {
+    margin-bottom: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 14px;
+    margin: 8px 0 15px;
+    background: #080808;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #ff8c00;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ffa52f;
+}
+
+.result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: #ff9d22;
+}
+
+footer {
+    text-align: center;
+    color: #666;
+    padding: 40px 20px;
+    font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">OVER<span>TEACH</span></div>
+    <div class="subtitle">MECHANIKER • PREISLISTE • GTA RP</div>
+</header>
+
+<div class="container">
+
+    <!-- REPARATUREN -->
+    <h2 class="section-title">🔧 Reparaturen</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Fahrzeugdiagnose</h3>
+            <p>Überprüfung des Fahrzeugzustands</p>
+            <div class="price">$ 500</div>
+        </div>
+
+        <div class="card">
+            <h3>Kleine Reparatur</h3>
+            <p>Kleinere Schäden am Fahrzeug</p>
+            <div class="price">$ 1.000</div>
+        </div>
+
+        <div class="card">
+            <h3>Mittlere Reparatur</h3>
+            <p>Reparatur von stärkeren Schäden</p>
+            <div class="price">$ 2.500</div>
+        </div>
+
+        <div class="card">
+            <h3>Komplettreparatur</h3>
+            <p>Vollständige Instandsetzung</p>
+            <div class="price">$ 5.000</div>
+        </div>
+
+        <div class="card">
+            <h3>Motorreparatur</h3>
+            <p>Reparatur eines beschädigten Motors</p>
+            <div class="price">$ 7.500</div>
+        </div>
+
+        <div class="card">
+            <h3>Reifenwechsel</h3>
+            <p>Austausch beschädigter Reifen</p>
+            <div class="price">$ 2.000</div>
+        </div>
+
+    </div>
+
+    <!-- WARTUNG -->
+    <h2 class="section-title">🛠️ Wartung</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Ölwechsel</h3>
+            <p>Regelmäßiger Ölservice</p>
+            <div class="price">$ 750</div>
+        </div>
+
+        <div class="card">
+            <h3>Bremsen-Service</h3>
+            <p>Kontrolle und Wartung der Bremsanlage</p>
+            <div class="price">$ 3.000</div>
+        </div>
+
+        <div class="card">
+            <h3>Fahrwerk-Service</h3>
+            <p>Überprüfung und Wartung</p>
+            <div class="price">$ 3.500</div>
+        </div>
+
+        <div class="card">
+            <h3>Komplett-Service</h3>
+            <p>Umfassender Fahrzeugcheck</p>
+            <div class="price">$ 6.000</div>
+        </div>
+
+    </div>
+
+    <!-- TUNING -->
+    <h2 class="section-title">⚙️ Tuning</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Motor Stufe 1</h3>
+            <div class="price">$ 10.000</div>
+        </div>
+
+        <div class="card">
+            <h3>Motor Stufe 2</h3>
+            <div class="price">$ 15.000</div>
+        </div>
+
+        <div class="card">
+            <h3>Motor Stufe 3</h3>
+            <div class="price">$ 25.000</div>
+        </div>
+
+        <div class="card">
+            <h3>Bremsen Upgrade</h3>
+            <div class="price">$ 7.500</div>
+        </div>
+
+        <div class="card">
+            <h3>Getriebe Upgrade</h3>
+            <div class="price">$ 10.000</div>
+        </div>
+
+        <div class="card">
+            <h3>Turbo</h3>
+            <div class="price">$ 20.000</div>
+        </div>
+
+        <div class="card">
+            <h3>Fahrwerk</h3>
+            <div class="price">$ 7.500</div>
+        </div>
+
+    </div>
+
+    <!-- DIENSTE -->
+    <h2 class="section-title">🚗 Weitere Dienstleistungen</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Abschleppdienst</h3>
+            <p>Abholung und Transport des Fahrzeugs</p>
+            <div class="price">$ 2.500</div>
+        </div>
+
+        <div class="card">
+            <h3>Notfalleinsatz</h3>
+            <p>Mechaniker außerhalb der Werkstatt</p>
+            <div class="price">$ 3.500</div>
+        </div>
+
+        <div class="card">
+            <h3>Fahrzeugwäsche</h3>
+            <p>Professionelle Reinigung</p>
+            <div class="price">$ 500</div>
+        </div>
+
+    </div>
+
+    <!-- ZU-/ABSCHLÄGE -->
+    <h2 class="section-title">📊 Zu- & Abschläge</h2>
+
+    <div class="info">
+
+        <div class="info-row">
+            <span>Nachtzuschlag</span>
+            <strong class="orange">+25 %</strong>
+        </div>
+
+        <div class="info-row">
+            <span>Notfalleinsatz</span>
+            <strong class="red">+50 %</strong>
+        </div>
+
+        <div class="info-row">
+            <span>Außeneinsatz</span>
+            <strong class="orange">+30 %</strong>
+        </div>
+
+        <div class="info-row">
+            <span>Stammkundenrabatt</span>
+            <strong class="green">−10 %</strong>
+        </div>
+
+        <div class="info-row">
+            <span>Fraktionsrabatt</span>
+            <strong class="green">−15 %</strong>
+        </div>
+
+    </div>
+
+    <!-- PREISRECHNER -->
+    <div class="calculator">
+
+        <h2>💰 Preisrechner</h2>
+
+        <label>Grundpreis</label>
+        <input type="number" id="price" placeholder="z.B. 5000">
+
+        <label>Anpassung</label>
+
+        <select id="percent">
+            <option value="0">Keine Anpassung</option>
+            <option value="25">+25 % Nachtzuschlag</option>
+            <option value="50">+50 % Notfall</option>
+            <option value="30">+30 % Außeneinsatz</option>
+            <option value="-10">−10 % Stammkundenrabatt</option>
+            <option value="-15">−15 % Fraktionsrabatt</option>
+        </select>
+
+        <button onclick="calculate()">Preis berechnen</button>
+
+        <div class="result" id="result">
+            $ 0
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Overteach Mechaniker • GTA RP
+</footer>
+
+<script>
+function calculate() {
+
+    const price = Number(document.getElementById("price").value);
+    const percent = Number(document.getElementById("percent").value);
+
+    if (!price || price < 0) {
+        document.getElementById("result").innerText = "$ 0";
+        return;
+    }
+
+    const result = price + (price * percent / 100);
+
+    document.getElementById("result").innerText =
+        "$ " + Math.round(result).toLocaleString("de-DE");
+}
+</script>
+
+</body>
+</html>
+```
